@@ -8,4 +8,11 @@ class Person
     attr_reader :id
 
     attr_accessor :name, :age
+
+    private
+
+    def of_age?
+        @age >= 18
+    end
+
 end
