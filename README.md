@@ -2,7 +2,7 @@
 
 <a name="readme-top"></a>
 <div align="center">
-    <img src="" alt="logo" width="700"  height="auto" />
+    <img src="./code.png" alt="logo" width="700"  height="auto" />
   <br/>
   <h3><b>School-libray-Ruby</b></h3>
 </div>
