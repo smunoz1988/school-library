@@ -1,7 +1,6 @@
 require "./nameable.rb"
 
 class Person < Nameable
-  include Nameable
   def initialize(age, name = 'Unknown', _parent_permission: true)
     @id = Random.rand(1..1000)
     @name = name
