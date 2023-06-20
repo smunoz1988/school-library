@@ -46,7 +46,7 @@ Welcome to the OOP University Library Management System! As the librarian of OOP
 
 ### Key Features <a name="key-features"></a>
 
-- **App in development: Person, Student and Teacher had been created**
+- **App in development: Person, Student, Teacher classes and decorators had been created**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
