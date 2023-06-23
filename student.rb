@@ -3,7 +3,7 @@ require './person'
 class Student < Person
   attr_accessor :classroom
 
-  def initialize(age, classroom: nil, name = 'Unknown', _parent_permission: true)
+  def initialize(name, age, classroom: nil, _parent_permission: true)
     super(age, name, _parent_permission: true)
     @classroom = classroom
   end
@@ -12,7 +12,7 @@ class Student < Person
     '¯(ツ)/¯'
   end
 
-  def classroom(classroom)
+  def classroom_student(classroom)
     @classroom = classroom
     classroom.students.push(self) unless classroom.students.include?(self)
   end
