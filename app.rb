@@ -88,7 +88,7 @@ class App
     puts
     puts 'Select a person from the following list by number (not ID)'
     @people.each_with_index do |person, index|
-      puts "#{index} [#{person.class} Name: #{person.name}, ID: #{person.id}", "Age: #{person.age}]"
+      puts "#{index} [#{person.class}] Name: #{person.name}, ID: #{person.id}", "Age: #{person.age}"
     end
     person_index = gets.chomp.to_i
     puts 'Date:'
@@ -115,6 +115,6 @@ class App
   end
 
   def quit
-    puts 'Good bye!'
+    puts 'Thank you for using this app!'
   end
 end
