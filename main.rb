@@ -6,7 +6,7 @@ class Interface
 
         puts
         puts 'Welcome to School Library System!'
-        # here should deply the main menu
+        display_menu
     end
 
     def display_menu
@@ -21,7 +21,7 @@ class Interface
         puts '7. Exit'
         puts
         user_choice = gets.chomp
-        # call the method that runs the user choice
+        option_selected(user_choice)
     end
 
     def option_selected(user_choice)
@@ -46,5 +46,9 @@ class Interface
     end
 end
 
+def main
+    Interface.new
+end
 
+main
 
