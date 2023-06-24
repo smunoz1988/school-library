@@ -92,5 +92,20 @@ class App
         puts 'Rental created successfully'
         # here will call the main menu
     end
-    
+
+    def list_rentals
+        puts 'Id of the person:'
+        person_id = gets.chomp.to_i
+        if @rentals.empty?
+            puts 'No rentals asign to that id'
+        else
+            puts 'List of rentals:'
+            @rentals.each { |rental| puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}" }
+        end
+        # here will call the main menu
+    end
+
+    def quit
+        puts 'Good bye!'
+    end
 end
