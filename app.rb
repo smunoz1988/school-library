@@ -4,8 +4,8 @@ require './student'
 require './teacher'
 
 class App
-  def initialize(mainCall)
-    @mainCall = mainCall
+  def initialize(main_call)
+    @main_call = main_call
     @people = []
     @books = []
     @rentals_list = []
@@ -18,7 +18,7 @@ class App
       puts 'List of books:'
       @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
     end
-    @mainCall.display_menu
+    @main_call.display_menu
   end
 
   def list_people
@@ -30,7 +30,7 @@ class App
         puts "[#{person.class} Name: #{person.name}, ID: #{person.id}", "Age: #{person.age}]"
       end
     end
-    @mainCall.display_menu
+    @main_call.display_menu
   end
 
   def create_person
@@ -44,7 +44,7 @@ class App
     else
       puts 'Invalid option'
     end
-    @mainCall.display_menu
+    @main_call.display_menu
   end
 
   def create_student
@@ -54,7 +54,7 @@ class App
     name = gets.chomp
     puts 'Has parent permission? [Y/N]:'
     parent_permission = gets.chomp.upcase == 'Y'
-    @people.push(Student.new(age, name, parent_permission))
+    @people.push(Student.new(age, name, parent_permission: parent_permission))
     puts
     puts "Person #{name} was created"
   end
@@ -78,7 +78,7 @@ class App
     author = gets.chomp
     @books.push(Book.new(title, author))
     puts "Book #{title} was created"
-    @mainCall.display_menu
+    @main_call.display_menu
   end
 
   def create_rental
@@ -95,7 +95,7 @@ class App
     date = gets.chomp
     @rentals_list.push(Rental.new(date, @books[book_index], @people[person_index]))
     puts 'Rental created successfully'
-    @mainCall.display_menu
+    @main_call.display_menu
   end
 
   def list_rentals
@@ -111,7 +111,7 @@ class App
         end
       end
     end
-    @mainCall.display_menu
+    @main_call.display_menu
   end
 
   def quit
