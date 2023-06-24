@@ -67,4 +67,15 @@ class App
         @people.push(Teacher.new(age, specialization, name))
         puts "Person #{name} was created with ID #{id}"
     end
+
+    def create_book
+        puts 'Title:'
+        title = gets.chomp
+        puts 'Author:'
+        author = gets.chomp
+        @books.push(Book.new(title, author))
+        puts "Book #{title} was created"
+        # here will call the main menu
+    end
+
 end
