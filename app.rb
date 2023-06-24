@@ -56,4 +56,15 @@ class App
         @people.push(Student.new(age, name, parent_permission))
         puts "Person #{name} was created with ID #{id}"
     end
+
+    def create_teacher
+        puts 'Age:'
+        age = gets.chomp.to_i
+        puts 'Name:'
+        name = gets.chomp
+        puts 'Specialization:'
+        specialization = gets.chomp
+        @people.push(Teacher.new(age, specialization, name))
+        puts "Person #{name} was created with ID #{id}"
+    end
 end
