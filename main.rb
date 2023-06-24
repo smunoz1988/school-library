@@ -26,13 +26,13 @@ class Interface
 
     def option_selected(user_choice)
         options = {
-            '1' => :list_all_books,
-            '2' => :list_all_people,
+            '1' => :list_books,
+            '2' => :list_people,
             '3' => :create_person,
             '4' => :create_book,
             '5' => :create_rental,
-            '6' => :list_all_rentals,
-            '7' => :exit
+            '6' => :list_rentals,
+            '7' => :quit
         }
 
         method = options[user_choice]
