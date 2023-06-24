@@ -1,4 +1,3 @@
-require './person'
 require './book'
 require './rental'
 require './student'
@@ -9,7 +8,7 @@ class App
         @mainCall = mainCall
         @people = []
         @books = []
-        @rentals = []
+        @rentals_list = []
     end
 
     def list_books
@@ -88,10 +87,9 @@ class App
         puts 'Select a person from the following list by number (not ID)'
         @people.each_with_index { |person, index| puts "#{index} [#{person.class} Name: #{person.name}, ID: #{person.id}", "Age: #{person.age}]" }
         person_index = gets.chomp.to_i
-        person_index = @people[person_index].id
         puts 'Date:'
         date = gets.chomp
-        @rentals.push(Rental.new(date, @books[book_index], @people[person_index]))
+        @rentals_list.push(Rental.new(date, @books[book_index], @people[person_index]))
         puts 'Rental created successfully'
         @mainCall.display_menu
     end
@@ -99,11 +97,15 @@ class App
     def list_rentals
         puts 'Id of the person:'
         person_id = gets.chomp.to_i
-        if @rentals.empty?
+        if @rentals_list.empty?
             puts 'No rentals asign to that id'
         else
             puts 'List of rentals:'
-            @rentals.each { |rental| puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}" }
+            @rentals_list.each do |rental|
+                if rental.person.id == person_id
+                  puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}"
+                end
+            end              
         end
         @mainCall.display_menu
     end

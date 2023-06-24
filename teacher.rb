@@ -1,4 +1,4 @@
-  require './person' # consider using require_relative instead
+  require_relative './person'
 
 class Teacher < Person
   attr_reader :specialization
