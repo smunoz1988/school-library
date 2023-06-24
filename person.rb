@@ -1,4 +1,5 @@
-require './nameable'
+require_relative './rental'
+require_relative './nameable'
 
 class Person < Nameable
   attr_accessor :name, :age, :rentals
@@ -12,9 +13,9 @@ class Person < Nameable
     @rentals = []
   end
 
-  def add_rental(book, date)
-    rental = Rental.new(date, book, self)
-    @rentals << rental
+  def add_rental(rental)
+    rentals.push(rental)
+    rental.person = self
   end
 
   def can_use_services?

@@ -67,7 +67,7 @@ class App
         specialization = gets.chomp
         @people.push(Teacher.new(age, specialization, name))
         puts
-        puts "Person #{name} was created with ID #{id}"
+        puts "Person #{name} was created"
     end
 
     def create_book
