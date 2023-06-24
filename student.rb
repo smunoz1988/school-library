@@ -1,11 +1,10 @@
 require './person'
 
 class Student < Person
-  attr_accessor :classroom #  considering attr?reader
+  attr_reader :classroom
 
   def initialize(name, age, classroom: nil, _parent_permission: true)
     super(age, name, _parent_permission: true)
-    @classroom = classroom
   end
 
   def play_hooky
