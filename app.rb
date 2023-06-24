@@ -55,7 +55,7 @@ class App
         parent_permission = gets.chomp.upcase == 'Y'
         @people.push(Student.new(age, name, parent_permission))
         puts
-        puts "Person #{name} was created with ID #{id}"
+        puts "Person #{name} was created"
     end
 
     def create_teacher
