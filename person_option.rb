@@ -31,4 +31,17 @@ class PersonOption
         end
     end
 
+    def create_student
+        puts 'Age:'
+        age = gets.chomp.to_i
+        puts 'Name:'
+        name = gets.chomp
+        puts 'Has parent permission? [Y/N]:'
+        parent_permission = gets.chomp.upcase == 'Y'
+        @people.push(Student.new(age, name, parent_permission: parent_permission))
+        puts
+        puts "Person #{name} was created"
+      end
+    
+
 end
