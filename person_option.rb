@@ -43,5 +43,15 @@ class PersonOption
         puts "Person #{name} was created"
       end
     
-
+      def create_teacher
+        puts 'Age:'
+        age = gets.chomp.to_i
+        puts 'Name:'
+        name = gets.chomp
+        puts 'Specialization:'
+        specialization = gets.chomp
+        @people.push(Teacher.new(age, specialization, name))
+        puts
+        puts "Person #{name} was created"
+      end
 end
