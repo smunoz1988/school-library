@@ -112,6 +112,13 @@ Not available at the moment.
 - Twitter: [@twitterhandle](https://twitter.com/Santiag24209785)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/santiago-munoz-0b2b1a260)
 
+👤 **Daniela Moreno**
+
+- GitHub: [@daniela](https://github.com/danielamoreno699)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/daniela-moreno-06a139124/)
+- twitter : [twitter](@Daniela38932450)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🔭 Future Features <a name="future-features"></a>

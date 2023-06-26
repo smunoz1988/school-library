@@ -36,18 +36,7 @@ class App
   end
 
   def list_rentals
-    puts 'Id of the person:'
-    person_id = gets.chomp.to_i
-    if @rentals_list.empty?
-      puts 'No rentals asign to that id'
-    else
-      @rentals_list.each do |rental|
-        if rental.person.id == person_id
-          puts 'List of rentals:'
-          puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}"
-        end
-      end
-    end
+    @rentals_list.list_rentals
     @main_call.display_menu
   end
 
