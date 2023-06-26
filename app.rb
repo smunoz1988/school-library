@@ -1,13 +1,13 @@
-require './book_option'
-require './rental'
-require './person_option'
+require_relative 'book_option'
+require_relative 'rental_option'
+require_relative 'person_option'
 
 class App
   def initialize(main_call)
     @main_call = main_call
     @person_option = PersonOption.new
     @book_options = BookOption.new
-    @rentals_list = []
+    @rentals_list = RentalOption.new(@book_options.books, @person_option.people)
   end
 
   def list_books
@@ -31,19 +31,7 @@ class App
   end
 
   def create_rental
-    puts 'Select a book from the following list by number'
-    @book_options.books.each_with_index { |book, index| puts "#{index} Title: #{book.title}, Author: #{book.author}" }
-    book_index = gets.chomp.to_i
-    puts
-    puts 'Select a person from the following list by number (not ID)'
-    @person_option.people.each_with_index do |person, index|
-      puts "#{index} [#{person.class}] Name: #{person.name}, ID: #{person.id}", "Age: #{person.age}"
-    end
-    person_index = gets.chomp.to_i
-    puts 'Date:'
-    date = gets.chomp
-    @rentals_list.push(Rental.new(date, @book_options.books[book_index], @person_option.people[person_index]))
-    puts 'Rental created successfully'
+    @rentals_list.create_rental
     @main_call.display_menu
   end
 
