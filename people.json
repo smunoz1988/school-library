@@ -1,1 +1,1 @@
-[{"class":"Student","age":15,"name":"Mike","id":843,"rentals":["#<Rental:0x00007f69ad1c4558>"]},{"class":"Teacher","age":85,"name":"John","specialization":"Doc","id":559,"rentals":["#<Rental:0x00007fac01f74220>","#<Rental:0x00007f77c5634ae0>","#<Rental:0x00007f116a133760>"]}]
+[{"class":"Student","age":15,"name":"mike","id":836,"rentals":[]},{"class":"Teacher","age":85,"name":"Maria","specialization":"Doc","id":848,"rentals":["#<Rental:0x00007ffb719f1d10>","#<Rental:0x00007f866a573198>"]}]
