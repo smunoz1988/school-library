@@ -10,6 +10,11 @@ class App
     @rentals_list = RentalOption.new(@book_options.books, @person_option.people)
   end
 
+  def load_data
+    @book_options.load_books
+    # @person_option.load_people
+  end
+
   def list_books
     @book_options.list_books
     @main_call.display_menu
@@ -41,6 +46,8 @@ class App
   end
 
   def quit
+    @book_options.save_books
+    @person_option.save_people
     puts 'Thank you for using this app!'
   end
 end
