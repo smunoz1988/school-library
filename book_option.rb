@@ -26,6 +26,17 @@ class BookOption
     puts "Book #{title} was created"
   end
 
+  def load_books
+    # load from file books.json
+    if File.exist?('books.json')
+      books_data = JSON.parse(File.read('books.json'))
+      books_data.each do |book_data|
+        book = Book.new(book_data['title'], book_data['author'])
+        @books.push(book)
+      end
+    end
+  end
+
   def save_books
     books_data = []
     @books.each do |book|

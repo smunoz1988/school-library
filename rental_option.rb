@@ -1,6 +1,7 @@
 require_relative 'rental'
 require_relative 'person_option'
 require_relative 'book_option'
+
 class RentalOption
   def initialize(books, people)
     @rentals = []

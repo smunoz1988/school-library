@@ -1,5 +1,6 @@
 require './student'
 require './teacher'
+require 'json'
 
 class PersonOption
   attr_accessor :people
@@ -15,6 +16,7 @@ class PersonOption
       puts 'List of people:'
       @people.each do |person|
         puts "[#{person.class} Name: #{person.name}, ID: #{person.id}", "Age: #{person.age}]"
+        p person
       end
     end
   end
@@ -54,5 +56,54 @@ class PersonOption
     @people.push(Teacher.new(age, specialization, name))
     puts
     puts "Person #{name} was created"
+  end
+
+  def load_people
+    # load from file people.json
+    if File.exist?('people.json')
+      people_data = JSON.parse(File.read('people.json'))
+      people_data.each do |person_data|
+        if person_data['class'] == 'Student'
+          person = Student.new(person_data['age'], person_data['name'])
+          @people.push(person)
+        elsif person_data['class'] == 'Teacher'
+          person = Teacher.new(person_data['age'], person_data['specialization'], person_data['name'])
+          person.id = person_data['id']
+          person.rentals = person_data['rentals']
+          @people.push(person)
+        end
+      end
+    end
+  end
+
+  def save_people
+    people_data = []
+    @people.each do |person|
+      if person.class == Student
+        people_data.push(
+          class: 'Student',
+          age: person.age,
+          name: person.name,
+          id: person.id,
+          rentals: person.rentals
+        )
+      elsif person.class == Teacher
+        people_data.push(
+          class: 'Teacher',
+          age: person.age,
+          name: person.name,
+          specialization: person.specialization,
+          id: person.id,
+          rentals: person.rentals
+        )
+      end
+    end
+    puts people_data
+    puts '----------------'
+    print people
+    # save to file people.json
+    File.open('people.json', 'w') do |f|
+      f.write(people_data.to_json)
+    end
   end
 end
