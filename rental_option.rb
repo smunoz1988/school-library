@@ -43,17 +43,16 @@ class RentalOption
 
   def load_rentals
     # load from file rentals.json
-    if File.exist?('rentals.json')
-      rentals_data = JSON.parse(File.read('rentals.json'))
-      rentals_data.each do |rental_data|
-        book = Book.new(rental_data['book']['title'], rental_data['book']['author'])
-        person = Person.new(rental_data['person']['name'], rental_data['person']['age'])
-        person.id = rental_data['person']['id']
-        rental = Rental.new(rental_data['date'], book, person)
-        @rentals.push(rental)
-      end
+    return unless File.exist?('rentals.json')
+
+    rentals_data = JSON.parse(File.read('rentals.json'))
+    rentals_data.each do |rental_data|
+      book = Book.new(rental_data['book']['title'], rental_data['book']['author'])
+      person = Person.new(rental_data['person']['name'], rental_data['person']['age'])
+      person.id = rental_data['person']['id']
+      rental = Rental.new(rental_data['date'], book, person)
+      @rentals.push(rental)
     end
-    p @rentals
   end
 
   def save_rentals
