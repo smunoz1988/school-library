@@ -12,7 +12,7 @@ class App
 
   def load_data
     @book_options.load_books
-    # @person_option.load_people
+    @person_option.load_people
   end
 
   def list_books

@@ -1,1 +1,1 @@
-[{"class":"Student","age":15,"name":"Mike","id":410,"rentals":[]}]
+[{"class":"Student","age":15,"name":"Mike","id":843,"rentals":[]},{"class":"Teacher","age":85,"name":"John","specialization":"Doc","id":559,"rentals":["#<Rental:0x00007fac01f74220>"]}]

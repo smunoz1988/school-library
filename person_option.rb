@@ -65,6 +65,7 @@ class PersonOption
       people_data.each do |person_data|
         if person_data['class'] == 'Student'
           person = Student.new(person_data['age'], person_data['name'])
+          person.id = person_data['id']
           @people.push(person)
         elsif person_data['class'] == 'Teacher'
           person = Teacher.new(person_data['age'], person_data['specialization'], person_data['name'])
@@ -98,9 +99,6 @@ class PersonOption
         )
       end
     end
-    puts people_data
-    puts '----------------'
-    print people
     # save to file people.json
     File.open('people.json', 'w') do |f|
       f.write(people_data.to_json)
