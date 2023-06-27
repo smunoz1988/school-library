@@ -1,4 +1,5 @@
 require_relative 'book'
+require 'json'
 
 class BookOption
   attr_accessor :books
@@ -23,5 +24,29 @@ class BookOption
     author = gets.chomp
     @books.push(Book.new(title, author))
     puts "Book #{title} was created"
+  end
+
+  def load_books
+    # load from file books.json
+    return unless File.exist?('books.json')
+
+    books_data = JSON.parse(File.read('books.json'))
+    books_data.each do |book_data|
+      book = Book.new(book_data['title'], book_data['author'])
+      @books.push(book)
+    end
+  end
+
+  def save_books
+    books_data = []
+    @books.each do |book|
+      books_data.push(
+        title: book.title,
+        author: book.author,
+        rentals: book.rentals
+      )
+    end
+    # save to file books.json
+    File.write('books.json', books_data.to_json)
   end
 end

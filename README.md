@@ -49,7 +49,8 @@ Welcome to the OOP University Library Management System! As the librarian of OOP
 - **App in development: Person, Student, Teacher classes and decorators had been created**
 - **Add new students or teachers.**
 - **Add new books.**
-- **Save records of who borrowed a given book and when.**   
+- **Save records of who borrowed a given book and when.**
+- **Preserve Data in JSON files**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

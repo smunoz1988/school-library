@@ -1,6 +1,8 @@
 require_relative 'rental'
 require_relative 'person_option'
 require_relative 'book_option'
+require 'json'
+
 class RentalOption
   def initialize(books, people)
     @rentals = []
@@ -37,5 +39,41 @@ class RentalOption
         end
       end
     end
+  end
+
+  def load_rentals
+    # load from file rentals.json
+    return unless File.exist?('rentals.json')
+
+    rentals_data = JSON.parse(File.read('rentals.json'))
+    rentals_data.each do |rental_data|
+      book = Book.new(rental_data['book']['title'], rental_data['book']['author'])
+      person = Person.new(rental_data['person']['name'], rental_data['person']['age'])
+      person.id = rental_data['person']['id']
+      rental = Rental.new(rental_data['date'], book, person)
+      @rentals.push(rental)
+    end
+  end
+
+  def save_rentals
+    rentals_data = []
+    @rentals.each do |rental|
+      rentals_data.push(
+        date: rental.date,
+        book: {
+          title: rental.book.title,
+          author: rental.book.author,
+          rentals: rental.book.rentals
+        },
+        person: {
+          id: rental.person.id,
+          name: rental.person.name,
+          age: rental.person.age,
+          rentals: rental.person.rentals
+        }
+      )
+    end
+    # save to file rentals.json
+    File.write('rentals.json', rentals_data.to_json)
   end
 end

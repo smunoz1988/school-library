@@ -6,6 +6,7 @@ class Interface
 
     puts
     puts 'Welcome to School Library App!'
+    @app.load_data
     display_menu
   end
 
