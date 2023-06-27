@@ -28,12 +28,12 @@ class BookOption
 
   def load_books
     # load from file books.json
-    if File.exist?('books.json')
-      books_data = JSON.parse(File.read('books.json'))
-      books_data.each do |book_data|
-        book = Book.new(book_data['title'], book_data['author'])
-        @books.push(book)
-      end
+    return unless File.exist?('books.json')
+
+    books_data = JSON.parse(File.read('books.json'))
+    books_data.each do |book_data|
+      book = Book.new(book_data['title'], book_data['author'])
+      @books.push(book)
     end
   end
 
@@ -47,8 +47,6 @@ class BookOption
       )
     end
     # save to file books.json
-    File.open('books.json', 'w') do |f|
-      f.write(books_data.to_json)
-    end
+    File.write('books.json', books_data.to_json)
   end
 end

@@ -41,7 +41,6 @@ class RentalOption
     end
   end
 
-
   def load_rentals
     # load from file rentals.json
     if File.exist?('rentals.json')
@@ -60,24 +59,22 @@ class RentalOption
   def save_rentals
     rentals_data = []
     @rentals.each do |rental|
-    rentals_data.push(
-      date: rental.date,
-      book: {
-      title: rental.book.title,
-      author: rental.book.author,
-      rentals: rental.book.rentals
-      },
-      person: {
-      id: rental.person.id,
-      name: rental.person.name,
-      age: rental.person.age,
-      rentals: rental.person.rentals
-      }
-    )
+      rentals_data.push(
+        date: rental.date,
+        book: {
+          title: rental.book.title,
+          author: rental.book.author,
+          rentals: rental.book.rentals
+        },
+        person: {
+          id: rental.person.id,
+          name: rental.person.name,
+          age: rental.person.age,
+          rentals: rental.person.rentals
+        }
+      )
     end
     # save to file rentals.json
-    File.open('rentals.json', 'w') do |f|
-      f.write(rentals_data.to_json)
-    end
+    File.write('rentals.json', rentals_data.to_json)
   end
 end

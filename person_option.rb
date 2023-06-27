@@ -59,19 +59,19 @@ class PersonOption
 
   def load_people
     # load from file people.json
-    if File.exist?('people.json')
-      people_data = JSON.parse(File.read('people.json'))
-      people_data.each do |person_data|
-        if person_data['class'] == 'Student'
-          person = Student.new(person_data['age'], person_data['name'])
-          person.id = person_data['id']
-          @people.push(person)
-        elsif person_data['class'] == 'Teacher'
-          person = Teacher.new(person_data['age'], person_data['specialization'], person_data['name'])
-          person.id = person_data['id']
-          person.rentals = person_data['rentals']
-          @people.push(person)
-        end
+    return unless File.exist?('people.json')
+
+    people_data = JSON.parse(File.read('people.json'))
+    people_data.each do |person_data|
+      if person_data['class'] == 'Student'
+        person = Student.new(person_data['age'], person_data['name'])
+        person.id = person_data['id']
+        @people.push(person)
+      elsif person_data['class'] == 'Teacher'
+        person = Teacher.new(person_data['age'], person_data['specialization'], person_data['name'])
+        person.id = person_data['id']
+        person.rentals = person_data['rentals']
+        @people.push(person)
       end
     end
   end
@@ -79,7 +79,7 @@ class PersonOption
   def save_people
     people_data = []
     @people.each do |person|
-      if person.class == Student
+      if person.instance_of?(Student)
         people_data.push(
           class: 'Student',
           age: person.age,
@@ -87,7 +87,7 @@ class PersonOption
           id: person.id,
           rentals: person.rentals
         )
-      elsif person.class == Teacher
+      elsif person.instance_of?(Teacher)
         people_data.push(
           class: 'Teacher',
           age: person.age,
@@ -99,8 +99,6 @@ class PersonOption
       end
     end
     # save to file people.json
-    File.open('people.json', 'w') do |f|
-      f.write(people_data.to_json)
-    end
+    File.write('people.json', people_data.to_json)
   end
 end
