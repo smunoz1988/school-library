@@ -58,24 +58,6 @@ class PersonOption
     puts "Person #{name} was created"
   end
 
-  def load_people
-    # load from file people.json
-    if File.exist?('people.json')
-      people_data = JSON.parse(File.read('people.json'))
-      people_data.each do |person_data|
-        if person_data['class'] == 'Student'
-          person = Student.new(person_data['age'], person_data['name'])
-          @people.push(person)
-        elsif person_data['class'] == 'Teacher'
-          person = Teacher.new(person_data['age'], person_data['specialization'], person_data['name'])
-          person.id = person_data['id']
-          person.rentals = person_data['rentals']
-          @people.push(person)
-        end
-      end
-    end
-  end
-
   def save_people
     people_data = []
     @people.each do |person|
