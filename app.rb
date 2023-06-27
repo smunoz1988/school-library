@@ -48,6 +48,7 @@ class App
   def quit
     @book_options.save_books
     @person_option.save_people
+    @rentals_list.save_rentals
     puts 'Thank you for using this app!'
   end
 end

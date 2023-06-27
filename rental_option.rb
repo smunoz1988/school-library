@@ -1,6 +1,7 @@
 require_relative 'rental'
 require_relative 'person_option'
 require_relative 'book_option'
+require 'json'
 
 class RentalOption
   def initialize(books, people)
@@ -37,6 +38,30 @@ class RentalOption
           puts "Date: #{rental.date}, Book #{rental.book.title} by #{rental.book.author}"
         end
       end
+    end
+  end
+
+  def save_rentals
+    rentals_data = []
+    @rentals.each do |rental|
+    rentals_data.push(
+      date: rental.date,
+      book: {
+      title: rental.book.title,
+      author: rental.book.author,
+      rentals: rental.book.rentals
+      },
+      person: {
+      id: rental.person.id,
+      name: rental.person.name,
+      age: rental.person.age,
+      rentals: rental.person.rentals
+      }
+    )
+    end
+    # save to file rentals.json
+    File.open('rentals.json', 'w') do |f|
+      f.write(rentals_data.to_json)
     end
   end
 end

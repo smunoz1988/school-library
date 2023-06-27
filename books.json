@@ -1,1 +1,1 @@
-[{"title":"dsakdjas","author":"dlsakkjdaskldja","rentals":[]},{"title":"dlkskajdklas","author":"dalskdasklds","rentals":[]},{"title":"test","author":"oeee","rentals":[]},{"title":"mike ","author":"porter","rentals":[]}]
+[{"title":"dsakdjas","author":"dlsakkjdaskldja","rentals":["#<Rental:0x00007f69ad1c4558>"]},{"title":"dlkskajdklas","author":"dalskdasklds","rentals":[]},{"title":"test","author":"oeee","rentals":[]},{"title":"mike ","author":"porter","rentals":[]}]
