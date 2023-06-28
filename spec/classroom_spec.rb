@@ -15,5 +15,15 @@ describe ClassRoom do
         it 'returns the correct label' do
           expect(@classroom.label).to eq('Classroom 1')
         end
-    end    
+    end
+
+    describe '#add_student' do
+        it 'adds the student to the classroom' do
+          classroom = ClassRoom.new('Math')
+          student = double('student')
+          expect(student).to receive(:classroom=).with(classroom)
+          classroom.add_student(student)
+          expect(classroom.students).to include(student)
+        end
+    end
 end
