@@ -19,10 +19,10 @@
     - [Install](#install)
     - [Usage](#usage)
     - [Run tests](#run-tests)
-    - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
+  - [🙏 Acknowledgements](#acknowledgements)
   - [📝 License ](#-license-)
 
 # 📖 School-libray-Ruby <a name="about-project">School-libray-Ruby</a>
@@ -51,6 +51,7 @@ Welcome to the OOP University Library Management System! As the librarian of OOP
 - **Add new books.**
 - **Save records of who borrowed a given book and when.**
 - **Preserve Data in JSON files**
+- **Rspec Unit Test"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -97,14 +98,6 @@ Run the following command
 rubocop
 ```
 
-### Deployment
-
-You can deploy this project using:
-
-Not available at the moment.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## 👥 Authors <a name="authors"></a>
 
 👤 **Santiago Munoz**
@@ -131,6 +124,12 @@ Not available at the moment.
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank my coding partners! the have been a great support!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
