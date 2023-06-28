@@ -8,4 +8,10 @@ describe Teacher do
             expect(teacher).to be_an_instance_of(Teacher)
         end
     end
+
+    describe '#name' do
+        it 'returns the correct name' do
+            expect(teacher.name).to eq('Jose')
+        end
+    end
 end
