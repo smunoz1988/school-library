@@ -47,5 +47,11 @@ describe Person do
       end
     end
   end
+
+  describe '#correct_name' do
+    it 'returns the correct name' do
+      expect(person.correct_name).to eq('jose')
+    end
+  end
 end
 
