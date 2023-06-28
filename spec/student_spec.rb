@@ -16,4 +16,10 @@ describe Student do
             @student.age.should eql 10
         end
     end
+
+    describe "return play_hooky" do
+        it "returns the correct play_hooky" do
+            @student.play_hooky.should eql "¯(ツ)/¯"
+        end
+    end
 end
