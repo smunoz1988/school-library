@@ -3,7 +3,7 @@ require './person'
 require './book'
 
 describe Rental do
-  let (:book) { Book.new('Fantastic Mr Fox', 'Roald Dahl') }
+  let(:book) { Book.new('Fantastic Mr Fox', 'Roald Dahl') }
   let(:person) { Person.new('jose', 18) }
   let(:rental) { Rental.new('2020-01-01', book, person) }
 
