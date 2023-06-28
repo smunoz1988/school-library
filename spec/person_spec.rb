@@ -30,5 +30,22 @@ describe Person do
       end
     end
   end
+
+
+  describe '#can_use_services?' do
+    context 'when age is 18 or above' do
+      it 'returns true' do
+        expect(person.can_use_services?).to be(true)
+      end
+    end
+
+    context 'when age is below 18' do
+      let(:person) { Person.new(16, 'jose', parent_permission: true) }
+
+      it 'returns true' do
+        expect(person.can_use_services?).to be(true)
+      end
+    end
+  end
 end
 
