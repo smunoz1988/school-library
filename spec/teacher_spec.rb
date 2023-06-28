@@ -14,4 +14,11 @@ describe Teacher do
             expect(teacher.name).to eq('Jose')
         end
     end
+
+    describe '#age' do
+        it 'returns the correct age' do
+            expect(teacher.age).to eq(34)
+        end
+    end
+   
 end
