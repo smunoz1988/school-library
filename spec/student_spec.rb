@@ -1,5 +1,4 @@
 require './student'
-require './classroom'
 
 describe Student do
   before do
@@ -21,6 +20,15 @@ describe Student do
   describe "#play_hooky" do
     it "returns the correct play_hooky" do
       expect(@student.play_hooky).to eql("¯(ツ)/¯")
+    end
+  end
+
+  describe "#classroom_student" do
+    it "returns the correct classroom_student" do
+      classroom = double("classroom")
+      allow(classroom).to receive(:students).and_return([])
+      @student.classroom_student(classroom)
+      expect(classroom.students).to eql([@student])
     end
   end
 end
