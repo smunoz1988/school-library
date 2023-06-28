@@ -51,6 +51,7 @@ Welcome to the OOP University Library Management System! As the librarian of OOP
 - **Add new books.**
 - **Save records of who borrowed a given book and when.**
 - **Preserve Data in JSON files**
+- **Rspec Unit Test"
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
