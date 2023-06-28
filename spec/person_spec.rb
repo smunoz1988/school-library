@@ -31,7 +31,6 @@ describe Person do
     end
   end
 
-
   describe '#can_use_services?' do
     context 'when age is 18 or above' do
       it 'returns true' do
