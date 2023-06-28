@@ -23,6 +23,7 @@
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
+  - [🙏 Acknowledgements](#acknowledgements)
   - [📝 License ](#-license-)
 
 # 📖 School-libray-Ruby <a name="about-project">School-libray-Ruby</a>
@@ -132,6 +133,12 @@ Not available at the moment.
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank my coding partners! the have been a great support!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
