@@ -13,13 +13,13 @@ describe Book do
 
     describe "#title" do
         it "returns the correct title" do
-            @book.title.should eql "The Lord of the Rings"
+            expect(@book.title).to eql "The Lord of the Rings"
         end
     end
 
     describe "#author" do
         it "returns the correct author" do
-            @book.author.should eql "J. R. R. Tolkien"
+            expect(@book.author).to eql "J. R. R. Tolkien"
         end
     end
 end
