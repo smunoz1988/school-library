@@ -10,4 +10,11 @@ describe Book do
             expect(@book).to be_an_instance_of(Book)
         end
     end
+
+    describe "#title" do
+        it "returns the correct title" do
+            @book.title.should eql "The Lord of the Rings"
+        end
+    end
+    
 end
